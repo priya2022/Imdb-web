@@ -4,6 +4,16 @@
     margin:0;
     padding: 0;
 }
+#img1{
+    background-image: url('../im/lalaland.jpg')
+}
+#img2{
+    background-image: url('../im/father.jpg')
+}
+#img3{
+    background-image: url('../im/incep.jpg')
+    
+}
 
 body{
     font-family: 'Anton', sans-serif;
