@@ -4,6 +4,17 @@
     margin:0;
     padding: 0;
 }
+.nav_sty{
+  width:100%;
+  padding-left:50%;
+
+  
+}
+#icon {
+    width:100%;  
+    padding-left:10px;
+    
+}
 #img1{
     background-image: url('../im/lalaland.jpg')
 }
@@ -31,7 +42,7 @@ body{
     position:relative;
 }
 #carousel-item1 {
-    min-height:600px;
+    min-height:100vh;
     color:white;
     position:relative;
 }
@@ -199,7 +210,7 @@ body{
     padding:0;
     color:white;
     background:#1a1a1a;
-    max-height: 600px;
+    max-height: 100vh;
     font-size:22px;
     font-family: 'Poppins', sans-serif;
 }
@@ -249,7 +260,7 @@ body{
 #controls
 {
     display:flex;
-    margin-top:25%;
+    margin-top:20%;
     width:45px;
     height:80px;
 }
@@ -258,7 +269,7 @@ body{
     width:100%;
     margin:auto;
     padding:15px 50px 5px 50px;
-    height:200px;
+    max-height:200px;
     background:rgb(253, 248, 248)
 }
 .main-title

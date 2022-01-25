@@ -13,39 +13,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-  <script>
-    var y = document.getElementById("address")
-    var z =  document.getElementById('icon')
-    function geolocation(){
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(showPosition)
-        }else{
-            x.innerText="Geo Not Supported"
-        }
-    }
-  
-    function showPosition(data){
-        console.log(data)
-        let lat = data.coords.latitude;
-        let long = data.coords.longitude
-        var url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${long}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`
-        /*var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${data.coords.latitude},${data.coords.longitude}&key=`;
-        */
-        fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)                 
-            data.list.map((item) => {
-                console.log(item.temp.day)
-                y.innerText=`${item.temp.day}°C and ${item.weather[0].description}`
-                z.innerHTML=`<img class='card-img-top' src='https://openweathermap.org/img/w/${item.weather[0].icon}.png' alt='weather'/>`
-            })
-            
-        })
-    }
-    window.onload=geolocation()
-  </script>
-
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -68,16 +35,25 @@
               <li class="nav-item">
                 <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Top Movies</a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" id ="address" tabindex="-1"></a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link " id ="icon" tabindex="-1"></a>
-              </li>
+             
             </ul>
             
           </div>
         </div>
+      </nav>
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light nav_sty">
+        <div  id="navbarNav"> 
+          <ul class="navbar-nav ">
+            <li class="nav-item ">
+              <a class="nav-link " id="icon" tabindex="-1" aria-disabled="true">Top Movies</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link " id="address" tabindex="-1" aria-disabled="true">Top Movies</a>
+          </li>
+        </ul>
+       </div>
       </nav>
 
 
@@ -232,7 +208,7 @@
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
           
           <div class="carousel-inner">
-            <div class="carousel-item active my-2" id="carousel-item1">
+            <div class="carousel-item active " id="carousel-item1">
 
               <div class="row d-flex align-items-center justify-content-center">
 
@@ -342,7 +318,7 @@
 
                 <!--second-->
 
-              <div class="carousel-item  my-2 "id="carousel-item1">
+              <div class="carousel-item   "id="carousel-item1">
 
                 <div class="row d-flex align-items-center justify-content-center">
   
@@ -420,7 +396,306 @@
 
                 
                 <!--third-->
-                <div class="carousel-item  my-2"id="carousel-item1">
+                <div class="carousel-item  "id="carousel-item1">
+
+                  <div class="row d-flex align-items-center justify-content-center">
+    
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/darknight.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2">The Dark Knight (2008)</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/lacasa.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Money Heist</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/inception.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Inception</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/interstellar.jpeg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Interstellar</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/luca.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Luca</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle  float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                  </div><!--row-->
+      
+      
+                  </div><!--carousel-item-->
+    
+                  
+    
+
+
+
+            </div><!--carousel-inner-->
+  
+
+          <button class="carousel-control-prev " id="controls" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+
+          <button class="carousel-control-next "id="controls" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+      
+
+        <!---second division-->
+        <div class="container1 ">
+          
+          <p class="m-title ">
+            &nbsp &nbsp Fans Favorite
+          </p>
+          <p class="s-title ">
+            This week's top TV shows and Movies
+          </p>
+         
+        </div>
+
+
+        <div id="carouselExampleCaptions1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+          
+          <div class="carousel-inner">
+            <div class="carousel-item active " id="carousel-item1">
+
+              <div class="row d-flex align-items-center justify-content-center">
+
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/darknight.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" onclick="load()" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2" id="movie_name">The Dark Knight (2008)</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle   float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/lacasa.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Money Heist</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle  float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/inception.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Inception</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/interstellar.jpeg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Interstellar</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/luca.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Luca</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+              </div><!--row-->
+  
+  
+              </div><!--carousel-item-->
+
+              <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div >
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button"   class="btn-close float-end bg-info " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body mx-auto">
+        <p id="movieName" class="mx-auto"> Movie_name</p>
+        <p class="mx-auto" id="rateThis" >RATE &nbsp THIS</p>
+        <div id="ratings_movie">
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+      </div>
+      <button type="button" class="btn custom_color3">Rate</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+                <!--second-->
+
+              <div class="carousel-item   "id="carousel-item1">
+
+                <div class="row d-flex align-items-center justify-content-center">
+  
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/darknight.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2">The Dark Knight (2008)</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/lacasa.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Money Heist</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/inception.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Inception</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/interstellar.jpeg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Interstellar</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/luca.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Luca</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-plus mr-3"></i>Watchlist</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                </div><!--row-->
+    
+    
+                </div><!--carousel-item-->
+  
+                
+
+                
+                <!--third-->
+                <div class="carousel-item  "id="carousel-item1">
 
                   <div class="row d-flex align-items-center justify-content-center">
     
@@ -504,19 +779,354 @@
   
 
         
-          <button class="carousel-control-prev " id="controls" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <button class="carousel-control-prev " id="controls" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="prev">
             <span class="carousel-control-prev-icon " aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
 
-          <button class="carousel-control-next "id="controls" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <button class="carousel-control-next "id="controls" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
 
         </div>
 
+
+        <!---third division-->
+        <div class="container1 ">
+          
+          <p class="m-title ">
+            &nbsp &nbsp In Theaters 
+          </p>
+          <p class="s-title ">
+            Showtimes near you
+          </p>
+         
+        </div>
+
+
+        <div id="carouselExampleCaptions2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+          
+          <div class="carousel-inner">
+            <div class="carousel-item active " id="carousel-item1">
+
+              <div class="row d-flex align-items-center justify-content-center">
+
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/darknight.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" onclick="load()" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2" id="movie_name">The Dark Knight (2008)</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle   float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/lacasa.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Money Heist</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle  float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/inception.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Inception</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/interstellar.jpeg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Interstellar</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+                <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                  <img src="images/luca.jpg" class="card-img-top" alt="...">
+                  <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                  <div class="card-body">
+                    <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                    <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                    <h5 class="card-title mt-2 mb-4">Luca</h5>
+                    <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                    <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                    <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+  
+              </div><!--row-->
+  
+  
+              </div><!--carousel-item-->
+
+              <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div >
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button"   class="btn-close float-end bg-info " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body mx-auto">
+        <p id="movieName" class="mx-auto"> Movie_name</p>
+        <p class="mx-auto" id="rateThis" >RATE &nbsp THIS</p>
+        <div id="ratings_movie">
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+        <i class="bi bi-star-fill star_size"></i>
+      </div>
+      <button type="button" class="btn custom_color3">Rate</button>
+      </div>
       
+    </div>
+  </div>
+</div>
+
+
+                <!--second-->
+
+              <div class="carousel-item   "id="carousel-item1">
+
+                <div class="row d-flex align-items-center justify-content-center">
+  
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/darknight.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2">The Dark Knight (2008)</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/lacasa.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Money Heist</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/inception.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Inception</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/interstellar.jpeg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Interstellar</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                    <img src="images/luca.jpg" class="card-img-top" alt="...">
+                    <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                    <div class="card-body">
+                      <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                      <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                      <h5 class="card-title mt-2 mb-4">Luca</h5>
+                      <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                      <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                      <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                    </div>
+                  </div>
+    
+                </div><!--row-->
+    
+    
+                </div><!--carousel-item-->
+  
+                
+
+                
+                <!--third-->
+                <div class="carousel-item  "id="carousel-item1">
+
+                  <div class="row d-flex align-items-center justify-content-center">
+    
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/darknight.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2">The Dark Knight (2008)</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/lacasa.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Money Heist</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/inception.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Inception</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/interstellar.jpeg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Interstellar</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                    <div class="card col-md-2 mx-2 col-2 col-lg-2 col-xl-2 " >
+                      <img src="images/luca.jpg" class="card-img-top" alt="...">
+                      <span><i class="bi bi-bookmark-plus wishlist" ></i></span>
+                      <div class="card-body">
+                        <span class="card-text rated"><i class="bi bi-star-fill mr-3"></i>6.9</span>
+                        <a href="#" class="btn   float-end" id="rating_button"data-bs-toggle="modal" id="rating_button" data-bs-target="#exampleModal"><i class="bi bi-star"></i></a>
+                        <h5 class="card-title mt-2 mb-4">Luca</h5>
+                        <a href="#" class="btn btn-secondary custom_color my-3 w-100" style="font-weight:600;"id="wat_id"><i class="bi bi-ticket-fill mr-3"></i>ShowTimes</a>
+                        <a href="#" class="btn btn-secondary custom_color1  bottom_style mt-2 w-65" style="font-weight:500;"><i class="bi bi-play-fill mr-3"></i>Trailer</i></a>
+                        <a href="#" class="btn btn-secondary custom_color1 custom_color2 rounded-circle  float-end mt-2 ml-2"><i class="bi bi-info-circle"></i></a>
+                      </div>
+                    </div>
+      
+                  </div><!--row-->
+      
+      
+                  </div><!--carousel-item-->
+    
+                  
+    
+
+
+
+            </div><!--carousel-inner-->
+  
+  
+
+        
+          <button class="carousel-control-prev " id="controls" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+
+          <button class="carousel-control-next "id="controls" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+
+
+      
+
+        <script>
+          var y = document.getElementById("address")
+          var z =  document.getElementById('icon')
+          function geolocation(){
+              if(navigator.geolocation){
+                  navigator.geolocation.getCurrentPosition(showPosition)
+              }else{
+                  x.innerText="Geo Not Supported"
+              }
+          }
+        
+          function showPosition(data){
+              console.log(data)
+              let lat = data.coords.latitude;
+              let long = data.coords.longitude
+              var url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${long}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`
+              /*var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${data.coords.latitude},${data.coords.longitude}&key=`;
+              */
+              fetch(url)
+              .then((res) => res.json())
+              .then((data) => {
+                  console.log(data)                 
+                  data.list.map((item) => {
+                      console.log(item.temp.day)
+                      y.innerText=`${item.temp.day}°C and ${item.weather[0].description}`
+                      z.innerHTML=`<img class='card-img-top' src='https://openweathermap.org/img/w/${item.weather[0].icon}.png' alt='weather'/>`
+                  })
+                  
+              })
+          }
+          window.onload=geolocation()
+        </script>
 </body>
 </html>
     
