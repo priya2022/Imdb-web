@@ -347,3 +347,29 @@ body{
     color:grey !important;
     
 }
+@media only screen and (max-width:450px)
+{
+    body{
+        background-color:red;
+    }
+    
+    .bi-play-fill
+{
+    display:none !important;
+}
+.d-xs-none
+{
+    display:none !important;
+}
+}
+@media only screen and (max-width:300px)
+{
+    body{
+        background-color:greenyellow;
+    }
+    
+.d-xs-none
+{
+    display:none !important;
+}
+}
