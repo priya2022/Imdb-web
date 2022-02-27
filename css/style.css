@@ -5,24 +5,7 @@
     padding: 0;
 }
 
-.geoweather
-{
-    background-color:pink;
-    
-}
-/*#icon{
-   
-    height: 2px;
-    width: 80px;
-}*/
-#icon > img {
-    height:22px;
-   margin-left:70%;
-    width: 80px;
-    font-size:5px;
-    margin-top: -5%;
-    margin-bottom:-5%;
-}
+
 
 #img1{
     background-image: url('../im/lalaland.jpg')
@@ -114,6 +97,7 @@ body{
     top:0;
     background:rgba(3, 3, 3, 0.7);
     font-size:22px;
+    display:none !important;
 }
 .con
 {
@@ -140,7 +124,7 @@ body{
    
     
 }
-.carousel-control-prev-icon,.carousel-control-next-icon
+/*.carousel-control-prev-icon,.carousel-control-next-icon
 {
    
     padding:15px;
@@ -149,7 +133,7 @@ body{
     
     color:black;
     
-}
+}*/
 .carousel-control-prev,.carousel-control-next{
     
     color:black;
@@ -211,6 +195,11 @@ body{
     font-size:20px;
     padding-right:2px;
 }
+.resizingImg
+{
+    
+    font-size:14px !important;
+}
 .card-img-top
 {
     min-height:250px;
@@ -231,7 +220,7 @@ body{
 }
 .card-title
 {
-    font-size:18px;
+    font-size:16px;
 }
 #wat_id
 {
